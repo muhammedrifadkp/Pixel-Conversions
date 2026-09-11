@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     description: 'We build brands and digital experiences that drive growth.',
   },
   icons: {
-    icon: '/logo.jpeg',
-    shortcut: '/logo.jpeg',
-    apple: '/logo.jpeg',
+    icon: '/fav-icon.jpeg',
+    shortcut: '/fav-icon.jpeg',
+    apple: '/fav-icon.jpeg',
   },
   robots: {
     index: true,
