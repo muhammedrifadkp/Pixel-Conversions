@@ -1,0 +1,161 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { Logo } from '../brand/Logo';
+import { RotatingCTA } from '../ui/RotatingCTA';
+import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { InstagramIcon } from '../ui/Icons';
+import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
+
+export const Footer: React.FC = () => {
+  return (
+    <footer className="bg-[#0D0D0E] text-white pt-20 pb-12 border-t border-neutral-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-neutral-800/80">
+          {/* Col 1 & 2: Brand Info */}
+          <div className="lg:col-span-2 space-y-6">
+            <Logo variant="light" size={40} />
+            <p className="text-neutral-400 text-sm md:text-base max-w-md leading-relaxed font-sans">
+              We build brands and high-converting digital experiences that drive measurable growth. Web development, performance marketing, SEO, and brand strategy for ambitious businesses.
+            </p>
+            <div className="pt-2">
+              <RotatingCTA variant="primary" size="md" />
+            </div>
+          </div>
+
+          {/* Col 3: Navigation */}
+          <div className="space-y-4">
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-neutral-400">Company</h4>
+            <ul className="space-y-3 text-sm font-medium">
+              <li>
+                <Link href="/work" className="text-neutral-300 hover:text-white transition-colors">
+                  Selected Work
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-neutral-300 hover:text-white transition-colors">
+                  Capabilities & Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-neutral-300 hover:text-white transition-colors">
+                  About Pixel Conversions
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-neutral-300 hover:text-white transition-colors">
+                  Insights & Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-neutral-300 hover:text-white transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Services */}
+          <div className="space-y-4">
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-neutral-400">Core Services</h4>
+            <ul className="space-y-3 text-sm font-medium">
+              <li>
+                <Link href="/services/website-development" className="text-neutral-300 hover:text-[#FF2A38] transition-colors">
+                  Website Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/performance-marketing" className="text-neutral-300 hover:text-[#FF2A38] transition-colors">
+                  Performance Marketing
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/branding" className="text-neutral-300 hover:text-[#FF2A38] transition-colors">
+                  Brand Identity
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/seo" className="text-neutral-300 hover:text-[#FF2A38] transition-colors">
+                  SEO
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 5: Contact & Social */}
+          <div className="space-y-4">
+            <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-neutral-400">Get in Touch</h4>
+            <div className="space-y-3 text-sm text-neutral-300">
+              <a
+                href={createWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-[#FF2A38] transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#FF2A38]" />
+                <span>{DISPLAY_PHONE_FULL}</span>
+              </a>
+              <a
+                href="mailto:info@pixelconversions.com"
+                className="flex items-center gap-2 hover:text-[#FF2A38] transition-colors"
+              >
+                <Mail className="w-4 h-4 text-[#FF2A38]" />
+                <span>info@pixelconversions.com</span>
+              </a>
+              <a
+                href="https://www.instagram.com/pixelconversions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-neutral-300 hover:text-[#FF2A38] transition-colors pt-1"
+              >
+                <InstagramIcon className="w-4 h-4 text-[#FF2A38]" />
+                <span>@pixelconversions</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Office Locations */}
+        <div className="py-12 border-b border-neutral-800/80 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+          {/* Kozhikode */}
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 font-bold text-white text-base">
+              <MapPin className="w-4 h-4 text-[#FF2A38]" />
+              <span>Kozhikode Office</span>
+            </div>
+            <p className="text-neutral-400 leading-relaxed font-sans text-xs sm:text-sm">
+              4th Floor, HiLITE Business Park, Phase 2, Poovangal, Kozhikode, Pantheeramkavu, Kerala – 673014, India.
+            </p>
+          </div>
+
+          {/* Bengaluru */}
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 font-bold text-white text-base">
+              <MapPin className="w-4 h-4 text-[#FF2A38]" />
+              <span>Bengaluru Office</span>
+            </div>
+            <p className="text-neutral-400 leading-relaxed font-sans text-xs sm:text-sm">
+              BHIVE Platinum – Old Airport Road Campus, Old Airport Road, HAL 2nd Stage, Kodihalli, Indiranagar, Bengaluru, Karnataka – 560008, India.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom Legal & Copyright */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+          <p>© {new Date().getFullYear()} Pixel Conversions. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy-policy" className="hover:text-neutral-300 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-and-conditions" className="hover:text-neutral-300 transition-colors">
+              Terms & Conditions
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
