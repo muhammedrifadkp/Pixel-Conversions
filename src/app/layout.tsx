@@ -52,6 +52,11 @@ export const metadata: Metadata = {
     title: 'Pixel Conversions | Web Development & Digital Marketing Agency',
     description: 'We build brands and digital experiences that drive growth.',
   },
+  icons: {
+    icon: '/logo.jpeg',
+    shortcut: '/logo.jpeg',
+    apple: '/logo.jpeg',
+  },
   robots: {
     index: true,
     follow: true,
