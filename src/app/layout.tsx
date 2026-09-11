@@ -78,6 +78,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakarta.variable} ${mono.variable} scroll-smooth`}>
       <head>
+        <link rel="icon" href="/fav-icon.jpeg" type="image/jpeg" sizes="any" />
+        <link rel="shortcut icon" href="/fav-icon.jpeg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/fav-icon.jpeg" type="image/jpeg" />
         <StructuredData />
       </head>
       <body className="font-sans bg-white text-[#0D0D0E] antialiased selection:bg-[#FF2A38] selection:text-white flex flex-col min-h-screen">
