@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
 import { RotatingCTA } from '../ui/RotatingCTA';
 import { ShieldCheck, Zap, TrendingUp } from 'lucide-react';
+import { WhatsAppIcon } from '../ui/Icons';
+import { createWhatsAppLink } from '@/utils/whatsapp';
 
 export const Hero: React.FC = () => {
   const [isVideoReady, setIsVideoReady] = useState(false);
@@ -35,7 +37,7 @@ export const Hero: React.FC = () => {
   }, [isVideoReady, prefersReducedMotion]);
 
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden bg-white">
+    <section className="relative pt-20 md:pt-24 pb-16 md:pb-20 overflow-hidden bg-white">
       {/* Background Subtle Red Ambient Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#FF2A38]/[0.04] blur-[120px] rounded-full pointer-events-none" />
 
@@ -49,12 +51,6 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-4 sm:space-y-5 max-w-5xl"
           >
-            {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-100 border border-neutral-200/80 text-xs font-semibold text-neutral-800">
-              <span className="w-2 h-2 rounded-full bg-[#FF2A38] animate-pulse" />
-              <span>Web Development + Digital Marketing Agency</span>
-            </div>
-
             {/* Headline with 2-Line Flow: "We build brands & digital" / "experiences that drive growth." */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-[#0D0D0E] leading-[1.06] font-sans">
               <span className="block">We build brands &amp; digital</span>
@@ -91,8 +87,14 @@ export const Hero: React.FC = () => {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <RotatingCTA variant="primary" size="lg" />
-                <Button href="/work" variant="outline" size="lg">
-                  View Selected Work
+                <Button
+                  href={createWhatsAppLink()}
+                  variant="whatsapp"
+                  size="lg"
+                  external
+                  leftIcon={<WhatsAppIcon className="w-5 h-5 text-[#25D366] group-hover:text-white transition-colors duration-500" />}
+                >
+                  Chat on WhatsApp
                 </Button>
               </div>
 

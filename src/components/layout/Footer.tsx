@@ -87,59 +87,80 @@ export const Footer: React.FC = () => {
           {/* Col 5: Contact & Social */}
           <div className="space-y-4">
             <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-neutral-400">Get in Touch</h4>
-            <div className="space-y-3 text-sm text-neutral-300">
+            <div className="space-y-4 pt-1">
               <a
                 href={createWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#FF2A38] transition-colors"
+                className="flex items-center gap-3 text-base sm:text-lg font-bold text-white hover:text-[#FF2A38] transition-colors group"
               >
-                <Phone className="w-4 h-4 text-[#FF2A38]" />
-                <span>{DISPLAY_PHONE_FULL}</span>
+                <div className="w-9 h-9 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center shrink-0 group-hover:border-[#FF2A38]/40 transition-colors">
+                  <Phone className="w-5 h-5 text-[#FF2A38]" />
+                </div>
+                <span className="tracking-tight">{DISPLAY_PHONE_FULL}</span>
               </a>
               <a
                 href="mailto:info@pixelconversions.com"
-                className="flex items-center gap-2 hover:text-[#FF2A38] transition-colors"
+                className="flex items-center gap-3 text-base sm:text-lg font-bold text-white hover:text-[#FF2A38] transition-colors group"
               >
-                <Mail className="w-4 h-4 text-[#FF2A38]" />
-                <span>info@pixelconversions.com</span>
+                <div className="w-9 h-9 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center shrink-0 group-hover:border-[#FF2A38]/40 transition-colors">
+                  <Mail className="w-5 h-5 text-[#FF2A38]" />
+                </div>
+                <span className="tracking-tight">info@pixelconversions.com</span>
               </a>
               <a
                 href="https://www.instagram.com/pixelconversions/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-neutral-300 hover:text-[#FF2A38] transition-colors pt-1"
+                className="flex items-center gap-3 text-base sm:text-lg font-bold text-white hover:text-[#FF2A38] transition-colors group"
               >
-                <InstagramIcon className="w-4 h-4 text-[#FF2A38]" />
-                <span>@pixelconversions</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500" />
+                <div className="w-9 h-9 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center shrink-0 group-hover:border-[#FF2A38]/40 transition-colors">
+                  <InstagramIcon className="w-5 h-5 text-[#FF2A38]" />
+                </div>
+                <span className="flex items-center gap-1 tracking-tight">
+                  @pixelconversions
+                  <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-[#FF2A38] transition-colors" />
+                </span>
               </a>
             </div>
           </div>
         </div>
 
         {/* Office Locations */}
-        <div className="py-12 border-b border-neutral-800/80 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
-          {/* Kozhikode */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 font-bold text-white text-base">
-              <MapPin className="w-4 h-4 text-[#FF2A38]" />
-              <span>Kozhikode Office</span>
+        <div className="py-12 border-b border-neutral-800/80 space-y-6">
+          <h4 className="text-xs uppercase tracking-[0.2em] font-bold text-neutral-400">Our Office Locations</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Kozhikode */}
+            <div className="p-6 sm:p-7 rounded-2xl bg-neutral-900/80 border border-neutral-800/90 hover:border-neutral-700 transition-all space-y-3 shadow-md group">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-[#FF2A38]/10 border border-[#FF2A38]/20 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-[#FF2A38]" />
+                </div>
+                <div>
+                  <h5 className="font-bold text-white text-base sm:text-lg group-hover:text-[#FF2A38] transition-colors">Kozhikode Office</h5>
+                  <span className="text-xs text-neutral-400 font-medium">Kerala, India</span>
+                </div>
+              </div>
+              <p className="text-neutral-300 text-sm sm:text-base leading-relaxed font-sans">
+                4th Floor, HiLITE Business Park, Phase 2, Poovangal, Kozhikode, Pantheeramkavu, Kerala – 673014, India.
+              </p>
             </div>
-            <p className="text-neutral-400 leading-relaxed font-sans text-xs sm:text-sm">
-              4th Floor, HiLITE Business Park, Phase 2, Poovangal, Kozhikode, Pantheeramkavu, Kerala – 673014, India.
-            </p>
-          </div>
 
-          {/* Bengaluru */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 font-bold text-white text-base">
-              <MapPin className="w-4 h-4 text-[#FF2A38]" />
-              <span>Bengaluru Office</span>
+            {/* Bengaluru */}
+            <div className="p-6 sm:p-7 rounded-2xl bg-neutral-900/80 border border-neutral-800/90 hover:border-neutral-700 transition-all space-y-3 shadow-md group">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-[#FF2A38]/10 border border-[#FF2A38]/20 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5 text-[#FF2A38]" />
+                </div>
+                <div>
+                  <h5 className="font-bold text-white text-base sm:text-lg group-hover:text-[#FF2A38] transition-colors">Bengaluru Office</h5>
+                  <span className="text-xs text-neutral-400 font-medium">Karnataka, India</span>
+                </div>
+              </div>
+              <p className="text-neutral-300 text-sm sm:text-base leading-relaxed font-sans">
+                BHIVE Platinum – Old Airport Road Campus, Old Airport Road, HAL 2nd Stage, Kodihalli, Indiranagar, Bengaluru, Karnataka – 560008, India.
+              </p>
             </div>
-            <p className="text-neutral-400 leading-relaxed font-sans text-xs sm:text-sm">
-              BHIVE Platinum – Old Airport Road Campus, Old Airport Road, HAL 2nd Stage, Kodihalli, Indiranagar, Bengaluru, Karnataka – 560008, India.
-            </p>
           </div>
         </div>
 
