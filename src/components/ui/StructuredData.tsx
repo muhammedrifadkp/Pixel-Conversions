@@ -10,7 +10,7 @@ export const StructuredData: React.FC = () => {
     description: 'Web Development and Digital Marketing Agency building brands and digital experiences that drive growth across India, UAE, and globally.',
     telephone: '+918891277113',
     email: 'info@pixelconversions.com',
-    sameAs: ['https://www.instagram.com/pixelconversions/'],
+    sameAs: ['https://www.instagram.com/pixelconversion.ae/'],
     address: [
       {
         '@type': 'PostalAddress',

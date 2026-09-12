@@ -87,13 +87,13 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://instagram.com/pixelconversions"
+                  href="https://www.instagram.com/pixelconversion.ae/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-[#FF2A38] transition-colors"
                 >
                   <InstagramIcon className="w-4 h-4 text-[#FF2A38]" />
-                  <span className="font-semibold">@pixelconversions</span>
+                  <span className="font-semibold">@pixelconversion.ae</span>
                 </a>
               </div>
             </div>

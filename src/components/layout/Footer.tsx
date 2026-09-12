@@ -109,7 +109,7 @@ export const Footer: React.FC = () => {
                 <span className="tracking-tight">info@pixelconversions.com</span>
               </a>
               <a
-                href="https://www.instagram.com/pixelconversions/"
+                href="https://www.instagram.com/pixelconversion.ae/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-base sm:text-lg font-bold text-white hover:text-[#FF2A38] transition-colors group"
@@ -118,7 +118,7 @@ export const Footer: React.FC = () => {
                   <InstagramIcon className="w-5 h-5 text-[#FF2A38]" />
                 </div>
                 <span className="flex items-center gap-1 tracking-tight">
-                  @pixelconversions
+                  @pixelconversion.ae
                   <ArrowUpRight className="w-4 h-4 text-neutral-500 group-hover:text-[#FF2A38] transition-colors" />
                 </span>
               </a>
