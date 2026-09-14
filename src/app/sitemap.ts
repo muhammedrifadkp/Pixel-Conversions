@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { BLOG_POSTS } from '@/data/blog';
+import { PROJECTS } from '@/data/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pixelconversions.com';
@@ -24,6 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1.0 : route.startsWith('/services') ? 0.9 : 0.8,
   }));
 
+  const workRoutes = PROJECTS.map((project) => ({
+    url: `${baseUrl}/work/${project.id}`,
+    lastModified: new Date().toISOString().split('T')[0],
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
   const blogRoutes = BLOG_POSTS.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date().toISOString().split('T')[0],
@@ -31,5 +39,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...routes, ...blogRoutes];
+  return [...routes, ...workRoutes, ...blogRoutes];
 }

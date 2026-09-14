@@ -1,22 +1,68 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { SERVICES } from '@/data/services';
+import { PROJECTS } from '@/data/projects';
 import { Accordion } from '@/components/ui/Accordion';
 import { ContactForm } from '@/components/ui/ContactForm';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
-import { CheckCircle2, Zap, ShieldCheck, Globe, Code2, Smartphone, Cpu } from 'lucide-react';
+import { CheckCircle2, Zap, ShieldCheck, Globe, Code2, Smartphone, Cpu, ArrowUpRight } from 'lucide-react';
 import { GENERAL_FAQS } from '@/data/faq';
 
 export const metadata: Metadata = {
-  title: 'Website Development Services | Next.js & Shopify Agency',
-  description: 'Custom, fast, high-converting website development using Next.js, TypeScript, and Shopify. Serving Kozhikode, Bengaluru, UAE, and global clients.',
+  title: 'Website Development Agency & Custom Next.js Solutions | Pixel Conversions',
+  description: 'Custom, fast, high-converting website development agency using Next.js, TypeScript, and Shopify. Serving Kozhikode, Bengaluru, UAE, and global clients.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/services/website-development',
+  },
+  openGraph: {
+    title: 'Website Development Agency | Pixel Conversions',
+    description: 'Custom Next.js websites, e-commerce platforms, and web applications built for performance and growth.',
+    url: 'https://pixelconversions.com/services/website-development',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Pixel Conversions Website Development Agency',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Website Development Agency | Pixel Conversions',
+    description: 'Custom Next.js websites, e-commerce storefronts, and web applications built for speed and conversions.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function WebsiteDevelopmentPage() {
   const service = SERVICES['website-development'];
+  const relatedProjects = PROJECTS.filter((p) =>
+    ['ztoiq', 'rahath', 'pretty-homes-india', 'zhm-real-estate'].includes(p.id)
+  );
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Website Development',
+    name: 'Custom Website Development Services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Pixel Conversions',
+      url: 'https://pixelconversions.com',
+    },
+    areaServed: ['Kozhikode', 'Bengaluru', 'Kerala', 'India', 'United Arab Emirates', 'Global'],
+    description: 'High-performing Next.js web development, Shopify storefronts, landing page engineering, and web application development.',
+  };
 
   return (
     <div className="pt-32 pb-24 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Service Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
@@ -27,7 +73,7 @@ export default function WebsiteDevelopmentPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0D0D0E] tracking-tight font-sans leading-tight">
-              Website Development & Modern Web Apps
+              Website Development &amp; Modern Web Apps
             </h1>
 
             <p className="text-lg md:text-xl text-neutral-600 leading-relaxed font-sans">
@@ -90,6 +136,46 @@ export default function WebsiteDevelopmentPage() {
                 <span className="text-xs font-mono text-[#FF2A38] font-bold">0{idx + 1}</span>
                 <h3 className="text-xl font-bold text-[#0D0D0E]">{sub.title}</h3>
                 <p className="text-xs text-neutral-600 leading-relaxed font-sans">{sub.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Related Case Studies Internal Linking */}
+        <div className="mb-20 space-y-8 bg-neutral-50 p-8 sm:p-12 rounded-3xl border border-neutral-200">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <span className="text-xs uppercase tracking-[0.2em] font-bold text-[#FF2A38] block mb-1">
+                Proven Track Record
+              </span>
+              <h2 className="text-3xl font-extrabold text-[#0D0D0E] tracking-tight">
+                Featured Web Development Projects
+              </h2>
+            </div>
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0D0D0E] hover:text-[#FF2A38] transition-colors"
+            >
+              <span>Explore All Work</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {relatedProjects.map((project) => (
+              <div key={project.id} className="p-6 rounded-2xl bg-white border border-neutral-200 space-y-3">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-neutral-500">
+                  {project.category}
+                </span>
+                <h3 className="font-bold text-lg text-[#0D0D0E]">{project.title}</h3>
+                <p className="text-xs text-neutral-600 line-clamp-2 leading-relaxed">{project.description}</p>
+                <Link
+                  href={`/work/${project.id}`}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#FF2A38] hover:underline pt-1"
+                >
+                  <span>View Case Study</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             ))}
           </div>

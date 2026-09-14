@@ -6,15 +6,56 @@ import { RotatingCTA } from '@/components/ui/RotatingCTA';
 import { Search, MapPin, Code2, FileText, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'SEO Services | Local, Technical & Content Search Engine Optimization',
-  description: 'Sustainable organic search optimization, Google Business Profile scaling, and technical SEO for Kozhikode, Bengaluru, UAE, and global markets.',
+  title: 'SEO Agency & Local Search Optimization | Kozhikode & Bengaluru',
+  description: 'Sustainable organic search optimization, local SEO, Google Business Profile scaling, and technical JSON-LD schema for businesses in Kozhikode, Bengaluru, Kerala, UAE, and globally.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/services/seo',
+  },
+  openGraph: {
+    title: 'SEO Agency & Local Search Optimization | Pixel Conversions',
+    description: 'Sustainable organic search optimization, local SEO, Google Business Profile scaling, and technical SEO.',
+    url: 'https://pixelconversions.com/services/seo',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'SEO Agency - Pixel Conversions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SEO Agency & Local Search Optimization | Pixel Conversions',
+    description: 'Technical & local search engine optimization for modern businesses.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function SEOPage() {
   const service = SERVICES['seo'];
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Search Engine Optimization',
+    name: 'SEO & Organic Search Services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Pixel Conversions',
+      url: 'https://pixelconversions.com',
+    },
+    areaServed: ['Kozhikode', 'Bengaluru', 'Kerala', 'India', 'United Arab Emirates', 'Global'],
+    description: 'Technical SEO audits, local Google Business Profile optimization, keyword strategy, and schema markup.',
+  };
+
   return (
     <div className="pt-32 pb-24 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Service Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">

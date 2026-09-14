@@ -7,14 +7,55 @@ import { Palette, Sparkles, Layers, Type, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Brand Identity & Visual Design Agency | Logo & Guidelines',
-  description: 'Crafting bespoke brand identity systems, typography guidelines, and packaging designs for ambitious businesses.',
+  description: 'Bespoke brand identity design, logo creation, typography hierarchy, visual design systems, and brand guidelines for ambitious businesses in India, UAE, and globally.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/services/branding',
+  },
+  openGraph: {
+    title: 'Brand Identity & Visual Design Studio | Pixel Conversions',
+    description: 'Bespoke brand identity design, logo creation, typography hierarchy, and visual design systems.',
+    url: 'https://pixelconversions.com/services/branding',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Brand Identity Studio - Pixel Conversions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Brand Identity Studio | Pixel Conversions',
+    description: 'Bespoke brand identity design and visual design systems.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function BrandingPage() {
   const service = SERVICES['branding'];
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Brand Identity Design',
+    name: 'Brand Strategy & Visual Identity Services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Pixel Conversions',
+      url: 'https://pixelconversions.com',
+    },
+    areaServed: ['Kozhikode', 'Bengaluru', 'Kerala', 'India', 'United Arab Emirates', 'Global'],
+    description: 'Logo design, typography guidelines, brand identity systems, color palettes, and visual rulebooks.',
+  };
+
   return (
     <div className="pt-32 pb-24 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Service Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">

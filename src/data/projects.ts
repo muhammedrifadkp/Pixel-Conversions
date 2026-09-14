@@ -4,8 +4,13 @@ export interface Project {
   category: string;
   websiteUrl: string;
   description: string;
+  fullOverview: string;
+  deliverables: string[];
+  techStack: string[];
   image: string;
   featured: boolean;
+  seoTitle: string;
+  seoDescription: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -15,8 +20,13 @@ export const PROJECTS: Project[] = [
     category: 'E-commerce / Website Development',
     websiteUrl: 'https://ztoiq.com/',
     description: 'A premium fashion and lifestyle e-commerce experience focused on refined visual presentation, product discovery, and a luxury digital shopping experience.',
+    fullOverview: 'ZTOIQ is an online fashion brand. Pixel Conversions engineered a sleek, mobile-optimized storefront prioritizing high-end typography, responsive layout scaling, fast page load speeds, and intuitive product collection navigation.',
+    deliverables: ['Custom E-commerce Storefront', 'Mobile-First UI/UX Design', 'Product Catalog Architecture', 'Conversion Rate Optimization'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Shopify E-commerce Engine'],
     image: '/projects-images/ztoiq.png',
     featured: true,
+    seoTitle: 'ZTOIQ E-commerce Website Development Case Study | Pixel Conversions',
+    seoDescription: 'Explore how Pixel Conversions engineered a high-converting luxury fashion e-commerce storefront for ZTOIQ. Built with Next.js, TypeScript, and Shopify.',
   },
   {
     id: 'rahath',
@@ -24,8 +34,13 @@ export const PROJECTS: Project[] = [
     category: 'E-commerce / Modest Fashion',
     websiteUrl: 'https://rahathofficial.com/',
     description: 'A high-converting modest fashion e-commerce storefront featuring curated abayas, dresses, and a mobile-first digital ordering flow.',
+    fullOverview: 'Rahath is a modest fashion brand offering curated abayas, kimonos, and dresses. Pixel Conversions designed and developed an elegant digital shopping experience with fast image loading, clear category filtering, and direct customer inquiry routing.',
+    deliverables: ['E-commerce Storefront', 'Catalog & Category Filtering', 'Mobile Shopping Flow', 'WhatsApp Customer Checkout'],
+    techStack: ['Next.js', 'React', 'Tailwind CSS', 'Shopify Platform'],
     image: '/projects-images/rahath.jpg',
     featured: true,
+    seoTitle: 'Rahath Modest Fashion E-commerce Case Study | Pixel Conversions',
+    seoDescription: 'Case study of Rahath modest fashion e-commerce website built by Pixel Conversions with fast mobile performance and streamlined checkout flows.',
   },
   {
     id: 'pretty-homes-india',
@@ -33,8 +48,13 @@ export const PROJECTS: Project[] = [
     category: 'E-commerce / Home & Decor',
     websiteUrl: 'https://prettyhomesindia.com/',
     description: 'An artisanal e-commerce storefront for handcrafted Indian home decor, Tanjore & Pichwai paintings, brass artwork, and wooden carvings.',
+    fullOverview: 'Pretty Homes India presents handcrafted home decor and traditional artwork. Pixel Conversions developed an immersive online storefront highlighting rich product imagery, detailed craft descriptions, and smooth navigation across home accent categories.',
+    deliverables: ['Artisanal E-commerce Design', 'High-Resolution Media Gallery', 'Search & Category Architecture', 'Mobile Ordering Flow'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'E-commerce Infrastructure'],
     image: '/projects-images/pretty-homes.jpg',
     featured: true,
+    seoTitle: 'Pretty Homes India E-commerce Website Case Study | Pixel Conversions',
+    seoDescription: 'Discover the artisanal home decor e-commerce platform built for Pretty Homes India by Pixel Conversions, featuring rich visual galleries and sub-second page loads.',
   },
   {
     id: 'zhm-real-estate',
@@ -42,8 +62,13 @@ export const PROJECTS: Project[] = [
     category: 'Real Estate / Website Development',
     websiteUrl: 'https://www.zhmrealestatellc.ae/',
     description: 'A premium real estate digital platform designed to present properties, services, market information, and investor-focused content for the Dubai real estate market.',
+    fullOverview: 'ZHM Real Estate LLC is a Dubai-based real estate brokerage firm. Pixel Conversions built a corporate web platform featuring property listing displays, regional investment guides, lead capture forms, and direct agent inquiry integration.',
+    deliverables: ['Real Estate Web Platform', 'Property Portfolio Showcase', 'Investor Lead Funnel', 'WhatsApp Agent Direct Routing'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js'],
     image: '/projects-images/zhm.png',
     featured: true,
+    seoTitle: 'ZHM Real Estate LLC Dubai Web Development Case Study | Pixel Conversions',
+    seoDescription: 'Explore the corporate real estate platform created for ZHM Real Estate LLC in Dubai by Pixel Conversions. Optimized for property inquiries and international investor conversion.',
   },
   {
     id: 'business-setup',
@@ -51,8 +76,13 @@ export const PROJECTS: Project[] = [
     category: 'Business / Website Development',
     websiteUrl: 'https://businesssetup.ad-firms.com/',
     description: 'Corporate digital portal built for business setup and advisory services in UAE.',
+    fullOverview: 'Business Setup Portal provides advisory guidance for corporate licensing and business formation in the UAE. Pixel Conversions developed a clean advisory layout with structured service pages, clear consultation triggers, and mobile inquiry paths.',
+    deliverables: ['Corporate Advisory Website', 'Service Breakdown Architecture', 'Consultation Inquiry Funnel', 'Mobile Layout Optimization'],
+    techStack: ['React', 'Next.js', 'Tailwind CSS'],
     image: '/projects-images/adfirms.png',
     featured: false,
+    seoTitle: 'Business Setup UAE Corporate Website Case Study | Pixel Conversions',
+    seoDescription: 'Case study of the corporate business setup and advisory web portal engineered by Pixel Conversions for UAE market expansion.',
   },
   {
     id: 'one-pack',
@@ -60,8 +90,13 @@ export const PROJECTS: Project[] = [
     category: 'E-commerce / Website Development',
     websiteUrl: 'https://www.onepackonline.com/',
     description: 'Modern e-commerce platform built for online product packaging and supply solutions.',
+    fullOverview: 'One Pack supplies commercial product packaging and shipping solutions. Pixel Conversions delivered a modern B2B/B2C packaging catalog platform engineered for intuitive bulk catalog browsing and streamlined digital order placement.',
+    deliverables: ['Packaging E-commerce Store', 'Product Catalog & Variant Grid', 'B2B/B2C Inquiry System', 'Responsive UI Design'],
+    techStack: ['Next.js', 'Shopify', 'Tailwind CSS'],
     image: '/projects-images/one-pack.png',
     featured: false,
+    seoTitle: 'One Pack Packaging E-commerce Website Case Study | Pixel Conversions',
+    seoDescription: 'See how Pixel Conversions built a modern product packaging e-commerce platform for One Pack with fast catalog search and order placement.',
   },
   {
     id: 'b4-baking',
@@ -69,8 +104,13 @@ export const PROJECTS: Project[] = [
     category: 'Website / E-commerce',
     websiteUrl: 'https://www.b4baking.com/',
     description: 'Bespoke bakery and confectionery storefront crafted for digital ordering.',
+    fullOverview: 'B4 Baking is an artisanal bakery brand. Pixel Conversions designed a warm, appetite-appealing storefront showcasing specialty cakes, baked goods, and direct online order inquiries.',
+    deliverables: ['Bakery Storefront Design', 'Visual Product Menu', 'Custom Cake Order Inquiries', 'Mobile-First Navigation'],
+    techStack: ['Next.js', 'React', 'Tailwind CSS'],
     image: '/projects-images/b4-baking.png',
     featured: false,
+    seoTitle: 'B4 Baking Artisanal Storefront Case Study | Pixel Conversions',
+    seoDescription: 'Case study of B4 Baking bespoke bakery website designed by Pixel Conversions for smooth visual browsing and digital cake orders.',
   },
   {
     id: 'chillera',
@@ -78,8 +118,13 @@ export const PROJECTS: Project[] = [
     category: 'Website Development',
     websiteUrl: 'https://www.chillera.co.in/',
     description: 'Clean, responsive business website designed for modern brand presentation.',
+    fullOverview: 'Chillera is a contemporary business brand. Pixel Conversions engineered a lightweight, responsive company portal highlighting core products, brand story, and direct touchpoint access.',
+    deliverables: ['Corporate Web Development', 'Brand Story & Product Showcase', 'Responsive Layout Architecture', 'SEO Technical Optimization'],
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     image: '/projects-images/chillera.png',
     featured: false,
+    seoTitle: 'Chillera Business Website Development Case Study | Pixel Conversions',
+    seoDescription: 'Explore the responsive company website engineered for Chillera by Pixel Conversions, built for clean brand presentation and high mobile performance.',
   },
   {
     id: 'inchberry',
@@ -87,7 +132,12 @@ export const PROJECTS: Project[] = [
     category: 'E-commerce / Fashion & Apparel',
     websiteUrl: 'https://inchberry.in/',
     description: "Contemporary women's homewear and loungewear storefront crafted for effortless browsing and modern shopping.",
+    fullOverview: "Inchberry offers contemporary women's loungewear and homewear. Pixel Conversions designed a clean fashion e-commerce storefront with high-resolution image galleries, subtle collection filters, and instant WhatsApp customer inquiry routing.",
+    deliverables: ['Apparel E-commerce Store', 'Loungewear Product Galleries', 'Mobile-First Shopping UX', 'WhatsApp Order Trigger'],
+    techStack: ['Next.js', 'Shopify', 'Tailwind CSS'],
     image: '/projects-images/inchberry.jpg',
     featured: false,
+    seoTitle: 'Inchberry Womenswear E-commerce Case Study | Pixel Conversions',
+    seoDescription: 'Case study of Inchberry womenswear e-commerce website developed by Pixel Conversions, optimized for mobile browsing and sales conversion.',
   },
 ];

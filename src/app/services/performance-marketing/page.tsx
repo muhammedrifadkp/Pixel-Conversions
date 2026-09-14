@@ -8,15 +8,56 @@ import { TrendingUp, Target, BarChart3, Users, DollarSign } from 'lucide-react';
 import { GENERAL_FAQS } from '@/data/faq';
 
 export const metadata: Metadata = {
-  title: 'Performance Marketing & Paid Ads Agency | Google & Meta Ads',
-  description: 'Data-driven performance marketing campaigns on Google Ads, Meta (Facebook & Instagram), and YouTube designed for predictable lead generation.',
+  title: 'Performance Marketing Agency | Google & Meta Ads Campaigns',
+  description: 'Data-driven performance marketing agency executing Google Ads, Meta (Facebook & Instagram), and YouTube campaigns designed for predictable lead generation across Kozhikode, Bengaluru, UAE, and globally.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/services/performance-marketing',
+  },
+  openGraph: {
+    title: 'Performance Marketing Agency | Pixel Conversions',
+    description: 'Data-driven paid ads campaigns on Google Search, Display, Meta Ads, and conversion tracking.',
+    url: 'https://pixelconversions.com/services/performance-marketing',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Performance Marketing Agency - Pixel Conversions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Performance Marketing Agency | Pixel Conversions',
+    description: 'Data-driven paid ad campaigns designed for predictable lead generation.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function PerformanceMarketingPage() {
   const service = SERVICES['performance-marketing'];
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Performance Marketing',
+    name: 'Performance Marketing & Paid Ad Services',
+    provider: {
+      '@type': 'Organization',
+      name: 'Pixel Conversions',
+      url: 'https://pixelconversions.com',
+    },
+    areaServed: ['Kozhikode', 'Bengaluru', 'Kerala', 'India', 'United Arab Emirates', 'Global'],
+    description: 'Google Ads management, Meta Ads (Facebook & Instagram), conversion rate optimization, and paid ad funnel setup.',
+  };
+
   return (
     <div className="pt-32 pb-24 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Service Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">

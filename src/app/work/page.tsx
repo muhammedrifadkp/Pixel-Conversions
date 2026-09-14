@@ -6,8 +6,31 @@ import { RotatingCTA } from '@/components/ui/RotatingCTA';
 import { Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Selected Work | Real Projects Built by Pixel Conversions',
-  description: 'Explore completed websites and digital platforms built by Pixel Conversions for real businesses in India, UAE, and globally.',
+  title: 'Selected Work & Web Development Portfolio | Pixel Conversions',
+  description: 'Explore completed websites, e-commerce stores, and digital platforms built by Pixel Conversions for real businesses across India, UAE, and globally.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/work',
+  },
+  openGraph: {
+    title: 'Selected Work & Portfolio | Pixel Conversions',
+    description: 'Explore real websites and e-commerce platforms built by Pixel Conversions.',
+    url: 'https://pixelconversions.com/work',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Pixel Conversions Selected Work & Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Selected Work & Portfolio | Pixel Conversions',
+    description: 'Explore real websites and e-commerce platforms built by Pixel Conversions.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function WorkPage() {

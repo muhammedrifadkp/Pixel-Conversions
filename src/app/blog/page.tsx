@@ -5,8 +5,31 @@ import { BLOG_POSTS, BlogPost } from '@/data/blog';
 import { BookOpen, Clock, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Insights & Blog | Pixel Conversions',
-  description: 'Practical articles on web development, performance marketing, local SEO, and visual branding.',
+  title: 'Insights, Web Development & Growth Marketing Blog | Pixel Conversions',
+  description: 'Practical, actionable articles on web development, performance marketing campaigns, local SEO, and brand identity design by Pixel Conversions.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/blog',
+  },
+  openGraph: {
+    title: 'Insights & Strategy Blog | Pixel Conversions',
+    description: 'Practical articles on web development, performance marketing, local SEO, and brand identity strategy.',
+    url: 'https://pixelconversions.com/blog',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Pixel Conversions Blog & Insights',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Insights & Strategy Blog | Pixel Conversions',
+    description: 'Practical articles on web development, performance marketing, local SEO, and brand strategy.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function BlogListPage() {

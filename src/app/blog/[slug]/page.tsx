@@ -22,12 +22,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return { title: 'Article Not Found' };
 
   return {
-    title: post.title,
+    title: `${post.title} | Pixel Conversions Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://pixelconversions.com/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: `https://pixelconversions.com/blog/${post.slug}`,
       type: 'article',
+      images: [
+        {
+          url: 'https://pixelconversions.com/logo.jpeg',
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: ['https://pixelconversions.com/logo.jpeg'],
     },
   };
 }
@@ -40,8 +58,74 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    url: `https://pixelconversions.com/blog/${post.slug}`,
+    datePublished: '2026-08-01',
+    dateModified: '2026-09-10',
+    author: {
+      '@type': 'Organization',
+      name: post.author,
+      url: 'https://pixelconversions.com',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Pixel Conversions',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://pixelconversions.com/logo.jpeg',
+      },
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://pixelconversions.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: 'https://pixelconversions.com/blog',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: `https://pixelconversions.com/blog/${post.slug}`,
+      },
+    ],
+  };
+
+  const relatedServiceHref =
+    post.category === 'Website Development'
+      ? '/services/website-development'
+      : post.category === 'Performance Marketing'
+      ? '/services/performance-marketing'
+      : post.category === 'SEO'
+      ? '/services/seo'
+      : '/services/branding';
+
   return (
     <div className="pt-32 pb-24 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <Link
@@ -90,6 +174,28 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Main Content Body */}
         <div className="prose prose-neutral max-w-none font-sans text-neutral-700 text-base leading-relaxed space-y-6 whitespace-pre-line py-4">
           {post.content}
+        </div>
+
+        {/* Internal Service & Work Linking */}
+        <div className="my-12 p-6 sm:p-8 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-4">
+          <h2 className="text-lg font-bold text-[#0D0D0E]">Related Agency Services &amp; Projects</h2>
+          <p className="text-xs text-neutral-600 leading-relaxed">
+            Interested in scaling your business through expert {post.category.toLowerCase()} strategies? Discover how Pixel Conversions helps brands across India, UAE, and worldwide.
+          </p>
+          <div className="flex flex-wrap gap-4 pt-2 text-xs font-bold">
+            <Link
+              href={relatedServiceHref}
+              className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-[#0D0D0E] text-white hover:bg-[#FF2A38] transition-colors"
+            >
+              <span>Explore {post.category} Services</span>
+            </Link>
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-white border border-neutral-300 text-[#0D0D0E] hover:border-[#0D0D0E] transition-colors"
+            >
+              <span>View Case Studies</span>
+            </Link>
+          </div>
         </div>
 
         {/* Bottom CTA Card */}

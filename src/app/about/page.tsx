@@ -5,8 +5,31 @@ import { RotatingCTA } from '@/components/ui/RotatingCTA';
 import { ShieldCheck, Zap, Globe, Sparkles, MapPin, Target, CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Pixel Conversions | Web & Digital Growth Agency',
-  description: 'Learn about Pixel Conversions, our philosophy, core capabilities, and our commitment to building brands and digital experiences that drive growth.',
+  title: 'About Pixel Conversions | Web Development & Digital Marketing Agency',
+  description: 'Learn about Pixel Conversions, our web engineering philosophy, performance marketing approach, and office locations in Kozhikode, Kerala and Bengaluru, India.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/about',
+  },
+  openGraph: {
+    title: 'About Pixel Conversions | Web Development & Digital Marketing Agency',
+    description: 'Learn about Pixel Conversions, our web engineering philosophy, performance marketing approach, and office locations in Kozhikode and Bengaluru.',
+    url: 'https://pixelconversions.com/about',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'About Pixel Conversions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Pixel Conversions | Web Development & Digital Marketing Agency',
+    description: 'Learn about Pixel Conversions, our team philosophy, and office locations in Kozhikode and Bengaluru.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function AboutPage() {

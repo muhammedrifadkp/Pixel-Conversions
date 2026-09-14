@@ -8,8 +8,31 @@ import { ArrowUpRight, CheckCircle2, Globe, TrendingUp, Palette, Search } from '
 import { createWhatsAppLink } from '@/utils/whatsapp';
 
 export const metadata: Metadata = {
-  title: 'Capabilities & Core Services',
-  description: 'Pixel Conversions core services: Website Development, Performance Marketing, Branding, and SEO.',
+  title: 'Capabilities & Core Services | Web Development & Digital Marketing Agency',
+  description: 'Explore Pixel Conversions core growth services: Website Development, Performance Marketing, SEO, and Brand Strategy for businesses in India, UAE, and worldwide.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/services',
+  },
+  openGraph: {
+    title: 'Capabilities & Core Services | Pixel Conversions',
+    description: 'Explore Pixel Conversions core growth services: Website Development, Performance Marketing, SEO, and Brand Strategy.',
+    url: 'https://pixelconversions.com/services',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Pixel Conversions Capabilities & Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Capabilities & Core Services | Pixel Conversions',
+    description: 'Explore Pixel Conversions core growth services: Website Development, Performance Marketing, SEO, and Brand Strategy.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function ServicesPage() {

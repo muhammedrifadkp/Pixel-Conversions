@@ -2,8 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Project } from '@/data/projects';
-import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, ArrowUpRight, BookOpen } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
 
 interface ProjectCardProps {
@@ -31,23 +32,23 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, priority = fa
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-400 hover:text-white transition-colors"
-            title="Open website"
+            title={`Visit ${project.title} live website`}
           >
             <ExternalLink className="w-3.5 h-3.5" />
           </a>
         </div>
 
         {/* Real Project Image Container */}
-        <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-neutral-900">
+        <Link href={`/work/${project.id}`} className="block relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-neutral-900">
           <Image
             src={project.image}
-            alt={`${project.title} - ${project.category}`}
+            alt={`${project.title} - ${project.category} web development project`}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={priority}
             className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
           />
-        </div>
+        </Link>
       </div>
 
       {/* Card Details & Content */}
@@ -60,7 +61,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, priority = fa
           </div>
 
           <h3 className="text-2xl font-extrabold text-[#0D0D0E] tracking-tight group-hover:text-[#FF2A38] transition-colors">
-            {project.title}
+            <Link href={`/work/${project.id}`}>
+              {project.title}
+            </Link>
           </h3>
 
           <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed font-sans">
@@ -70,15 +73,25 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, priority = fa
 
         {/* Action Buttons */}
         <div className="pt-4 border-t border-neutral-100 flex flex-wrap items-center justify-between gap-3">
-          <a
-            href={project.websiteUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#0D0D0E] text-white hover:bg-[#FF2A38] text-xs font-bold transition-all duration-200 shadow-sm"
-          >
-            <span>View Website</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+          <div className="flex items-center gap-2">
+            <Link
+              href={`/work/${project.id}`}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#0D0D0E] text-white hover:bg-[#FF2A38] text-xs font-bold transition-all duration-200 shadow-sm"
+            >
+              <span>Case Study</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </Link>
+
+            <a
+              href={project.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-neutral-100 text-neutral-700 hover:bg-neutral-200 text-xs font-bold transition-colors"
+            >
+              <span>Live Site</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
 
           <a
             href={createWhatsAppLink(`Hi Pixel Conversions, I saw your work on ${project.title} (${project.websiteUrl}) and would like to discuss a similar project.`)}
@@ -86,7 +99,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, priority = fa
             rel="noopener noreferrer"
             className="text-xs font-medium text-neutral-500 hover:text-[#0D0D0E] transition-colors"
           >
-            Discuss Similar Project
+            Discuss Project
           </a>
         </div>
       </div>

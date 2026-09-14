@@ -6,8 +6,31 @@ import { InstagramIcon } from '@/components/ui/Icons';
 import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
 
 export const metadata: Metadata = {
-  title: 'Contact Pixel Conversions | Kozhikode & Bengaluru Offices',
-  description: 'Connect with Pixel Conversions directly via WhatsApp (+91 6282 336 330), email, or visit our Kozhikode and Bengaluru offices.',
+  title: 'Contact Pixel Conversions | Web Development Agency Kozhikode & Bengaluru',
+  description: 'Connect with Pixel Conversions directly via WhatsApp (+91 6282 336 330), email, or visit our Kozhikode and Bengaluru office locations.',
+  alternates: {
+    canonical: 'https://pixelconversions.com/contact',
+  },
+  openGraph: {
+    title: 'Contact Pixel Conversions | Web Development Agency Kozhikode & Bengaluru',
+    description: 'Connect with Pixel Conversions directly via WhatsApp (+91 6282 336 330), email, or visit our Kozhikode and Bengaluru office locations.',
+    url: 'https://pixelconversions.com/contact',
+    type: 'website',
+    images: [
+      {
+        url: 'https://pixelconversions.com/logo.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Pixel Conversions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Pixel Conversions | Web Development Agency Kozhikode & Bengaluru',
+    description: 'Connect with Pixel Conversions directly via WhatsApp, email, or visit our Kozhikode and Bengaluru offices.',
+    images: ['https://pixelconversions.com/logo.jpeg'],
+  },
 };
 
 export default function ContactPage() {
