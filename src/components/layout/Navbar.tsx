@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 import { Logo } from '../brand/Logo';
 import { RotatingCTA } from '../ui/RotatingCTA';
@@ -22,6 +22,7 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,31 +60,27 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-semibold tracking-tight rounded-full transition-colors duration-200 ${
+                  className={`relative px-4 py-2 text-sm font-semibold tracking-tight rounded-full transition-colors duration-300 select-none ${
                     isActive ? 'text-[#FF2A38]' : 'text-neutral-700 hover:text-[#0D0D0E]'
                   }`}
                 >
                   {isActive && (
-                    <motion.span
-                      layoutId="activeNavPill"
-                      className="absolute inset-0 bg-[#FF2A38]/[0.08] rounded-full border border-[#FF2A38]/20"
-                      transition={{
-                        type: 'spring',
-                        stiffness: 380,
-                        damping: 30,
-                      }}
-                    />
-                  )}
-                  {isActive && (
-                    <motion.span
-                      layoutId="activeNavUnderline"
-                      className="absolute bottom-1 left-3.5 right-3.5 h-[2px] bg-[#FF2A38] rounded-full"
-                      transition={{
-                        type: 'spring',
-                        stiffness: 380,
-                        damping: 30,
-                      }}
-                    />
+                    <motion.div
+                      layoutId="activeNavGlider"
+                      className="absolute inset-0 rounded-full bg-[#FF2A38]/[0.08] border border-[#FF2A38]/20 shadow-[0_2px_8px_-2px_rgba(255,42,56,0.12)] flex items-end justify-center pb-[3px]"
+                      transition={
+                        shouldReduceMotion
+                          ? { duration: 0 }
+                          : {
+                              type: 'spring',
+                              stiffness: 220,
+                              damping: 25,
+                              mass: 0.85,
+                            }
+                      }
+                    >
+                      <span className="w-3.5 h-[2px] bg-[#FF2A38] rounded-full" />
+                    </motion.div>
                   )}
                   <span className="relative z-10">{link.label}</span>
                 </Link>

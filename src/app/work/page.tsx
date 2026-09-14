@@ -28,7 +28,7 @@ export default function WorkPage() {
           </p>
         </div>
 
-        {/* Portfolio Grid showcasing all 6 real projects */}
+        {/* Portfolio Grid showcasing all 9 real projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PROJECTS.map((project, idx) => (
             <ProjectCard key={project.id} project={project} priority={idx < 3} />

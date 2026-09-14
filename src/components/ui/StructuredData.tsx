@@ -8,7 +8,7 @@ export const StructuredData: React.FC = () => {
     url: 'https://pixelconversions.com',
     logo: 'https://pixelconversions.com/logo.jpeg',
     description: 'Web Development and Digital Marketing Agency building brands and digital experiences that drive growth across India, UAE, and globally.',
-    telephone: '+918891277113',
+    telephone: '+916282336330',
     email: 'info@pixelconversions.com',
     sameAs: ['https://www.instagram.com/pixelconversion.ae/'],
     address: [
@@ -36,7 +36,7 @@ export const StructuredData: React.FC = () => {
     '@type': 'LocalBusiness',
     name: 'Pixel Conversions - Web Development & Digital Marketing Agency',
     image: 'https://pixelconversions.com/og-image.jpg',
-    telephone: '+918891277113',
+    telephone: '+916282336330',
     email: 'info@pixelconversions.com',
     priceRange: '₹20000 - ₹50000',
     address: {

@@ -37,7 +37,7 @@ export default function TermsPage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-[#0D0D0E]">4. Inquiries & Communication</h2>
           <p className="text-sm leading-relaxed">
-            For questions regarding these terms, contact info@pixelconversions.com or WhatsApp +91 88912 77113.
+            For questions regarding these terms, contact info@pixelconversions.com or WhatsApp +91 6282 336 330.
           </p>
         </section>
       </div>

@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { X, ArrowUpRight, Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from '../brand/Logo';
 import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
@@ -24,6 +24,7 @@ const NAV_ITEMS = [
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
+  const shouldReduceMotion = useReducedMotion();
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -96,11 +97,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                         <motion.span
                           layoutId="activeMobileNavPill"
                           className="absolute inset-0 bg-[#FF2A38]/[0.08] border-l-2 border-[#FF2A38] rounded-xl -z-0"
-                          transition={{
-                            type: 'spring',
-                            stiffness: 380,
-                            damping: 30,
-                          }}
+                          transition={
+                            shouldReduceMotion
+                              ? { duration: 0 }
+                              : {
+                                  type: 'spring',
+                                  stiffness: 220,
+                                  damping: 25,
+                                  mass: 0.85,
+                                }
+                          }
                         />
                       )}
                       <span className="flex items-center gap-3 relative z-10">

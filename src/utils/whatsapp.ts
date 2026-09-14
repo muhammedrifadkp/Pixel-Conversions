@@ -1,6 +1,6 @@
-export const WHATSAPP_NUMBER = '918891277113';
-export const DISPLAY_PHONE = '88912 77113';
-export const DISPLAY_PHONE_FULL = '+91 88912 77113';
+export const WHATSAPP_NUMBER = '916282336330';
+export const DISPLAY_PHONE = '6282 336 330';
+export const DISPLAY_PHONE_FULL = '+91 6282 336 330';
 
 export const createWhatsAppLink = (customMessage?: string): string => {
   const defaultMessage = `Hi Pixel Conversions,\n\nI'd like to discuss a project.`;

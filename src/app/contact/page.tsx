@@ -7,7 +7,7 @@ import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
 
 export const metadata: Metadata = {
   title: 'Contact Pixel Conversions | Kozhikode & Bengaluru Offices',
-  description: 'Connect with Pixel Conversions directly via WhatsApp (+91 88912 77113), email, or visit our Kozhikode and Bengaluru offices.',
+  description: 'Connect with Pixel Conversions directly via WhatsApp (+91 6282 336 330), email, or visit our Kozhikode and Bengaluru offices.',
 };
 
 export default function ContactPage() {
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="w-full py-3.5 px-6 rounded-full bg-[#FF2A38] hover:bg-[#E50914] text-white font-bold text-sm text-center block transition-colors shadow-lg shadow-[#FF2A38]/30"
               >
-                Message +91 88912 77113 on WhatsApp
+                Message +91 6282 336 330 on WhatsApp
               </a>
             </div>
 

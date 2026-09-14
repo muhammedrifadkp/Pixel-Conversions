@@ -64,7 +64,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         </div>
         <div>
           <h3 className="font-bold text-xl text-[#0D0D0E]">Start a Project Conversation</h3>
-          <p className="text-xs text-neutral-500">Redirects directly to WhatsApp (+91 88912 77113)</p>
+          <p className="text-xs text-neutral-500">Redirects directly to WhatsApp (+91 6282 336 330)</p>
         </div>
       </div>
 

@@ -35,6 +35,6 @@ export const GENERAL_FAQS: FAQItem[] = [
   },
   {
     question: 'How do we start a project with Pixel Conversions?',
-    answer: 'Getting started is fast and simple. Click any "Start a Project" or WhatsApp CTA on our site to connect with us directly on WhatsApp (+91 88912 77113). We will discuss your goals and provide a tailored plan within 24 hours.',
+    answer: 'Getting started is fast and simple. Click any "Start a Project" or WhatsApp CTA on our site to connect with us directly on WhatsApp (+91 6282 336 330). We will discuss your goals and provide a tailored plan within 24 hours.',
   },
 ];
