@@ -139,7 +139,7 @@ export default function ServicesPage() {
             Chat directly with our team on WhatsApp. We will help you identify the highest-ROI entry point for your budget.
           </p>
           <div className="flex justify-center">
-            <RotatingCTA variant="primary" size="lg" />
+            <RotatingCTA variant="primary" size="lg" location="services_page" />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { ContactForm } from '@/components/ui/ContactForm';
+import { WhatsAppLink } from '@/components/ui/WhatsAppLink';
 import { Mail, Phone, MapPin, Sparkles, MessageSquare } from 'lucide-react';
 import { InstagramIcon } from '@/components/ui/Icons';
 import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
@@ -74,14 +75,14 @@ export default function ContactPage() {
               <p className="text-xs text-neutral-300 leading-relaxed font-sans">
                 Skip form filling and message us directly on WhatsApp to share your project brief or ask quick questions.
               </p>
-              <a
+              <WhatsAppLink
                 href={createWhatsAppLink("Hi Pixel Conversions, I'd like to discuss a new project.")}
-                target="_blank"
-                rel="noopener noreferrer"
+                location="contact_page_fast_box"
+                label="Message on WhatsApp"
                 className="w-full py-3.5 px-6 rounded-full bg-[#FF2A38] hover:bg-[#E50914] text-white font-bold text-sm text-center block transition-colors shadow-lg shadow-[#FF2A38]/30"
               >
                 Message +91 6282 336 330 on WhatsApp
-              </a>
+              </WhatsAppLink>
             </div>
 
             {/* Direct Contact Details */}
@@ -91,15 +92,15 @@ export default function ContactPage() {
               </h3>
 
               <div className="space-y-4 text-sm text-[#0D0D0E]">
-                <a
+                <WhatsAppLink
                   href={createWhatsAppLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  location="contact_page_direct_phone"
+                  label={DISPLAY_PHONE_FULL}
                   className="flex items-center gap-3 hover:text-[#FF2A38] transition-colors"
                 >
                   <Phone className="w-4 h-4 text-[#FF2A38]" />
                   <span className="font-semibold">{DISPLAY_PHONE_FULL}</span>
-                </a>
+                </WhatsAppLink>
 
                 <a
                   href="mailto:info@pixelconversions.com"

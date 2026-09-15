@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { PROJECTS } from '@/data/projects';
 import { Button } from '@/components/ui/Button';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
+import { WhatsAppLink } from '@/components/ui/WhatsAppLink';
 import { ArrowLeft, ExternalLink, ArrowUpRight, CheckCircle2, Code2, Sparkles, Layers } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
 
@@ -155,14 +156,14 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               <ExternalLink className="w-4 h-4" />
             </a>
 
-            <a
+            <WhatsAppLink
               href={createWhatsAppLink(`Hi Pixel Conversions, I saw your work on ${project.title} (${project.websiteUrl}) and would like to discuss a similar project.`)}
-              target="_blank"
-              rel="noopener noreferrer"
+              location="case_study_header"
+              label={project.title}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-100 hover:bg-neutral-200 text-[#0D0D0E] text-xs font-bold transition-colors"
             >
               <span>Discuss Similar Project</span>
-            </a>
+            </WhatsAppLink>
           </div>
         </div>
 
@@ -321,7 +322,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               Let&apos;s build a digital experience tailored to your business goals.
             </p>
           </div>
-          <RotatingCTA variant="primary" size="lg" customMessage={`Hi Pixel Conversions, I saw your work on ${project.title} and want to discuss a project.`} />
+          <RotatingCTA variant="primary" size="lg" location="case_study_footer" customMessage={`Hi Pixel Conversions, I saw your work on ${project.title} and want to discuss a project.`} />
         </div>
       </div>
     </div>

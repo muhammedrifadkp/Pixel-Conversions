@@ -90,7 +90,7 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Right CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <RotatingCTA variant="primary" size="md" />
+            <RotatingCTA variant="primary" size="md" location="header" />
           </div>
 
           {/* Mobile Menu Button - Single Row with Logo */}

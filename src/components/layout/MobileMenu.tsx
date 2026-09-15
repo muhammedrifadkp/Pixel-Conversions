@@ -7,6 +7,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { X, ArrowUpRight, Phone, Mail, MapPin } from 'lucide-react';
 import { Logo } from '../brand/Logo';
 import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
+import { trackWhatsAppClick } from '@/utils/analytics';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -134,7 +135,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 href={createWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={onClose}
+                onClick={() => {
+                  trackWhatsAppClick('mobile_menu', 'Start a Project');
+                  onClose();
+                }}
                 className="w-full py-3.5 bg-[#FF2A38] hover:bg-[#E50914] text-white rounded-full font-bold text-base tracking-tight text-center flex items-center justify-center gap-2 transition-all shadow-lg shadow-[#FF2A38]/30 active:scale-[0.98]"
               >
                 <span>Start a Project</span>

@@ -7,6 +7,7 @@ import { RotatingCTA } from '../ui/RotatingCTA';
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import { InstagramIcon } from '../ui/Icons';
 import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
+import { trackWhatsAppClick } from '@/utils/analytics';
 
 export const Footer: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ export const Footer: React.FC = () => {
               We build brands and high-converting digital experiences that drive measurable growth. Web development, performance marketing, SEO, and brand strategy for ambitious businesses.
             </p>
             <div className="pt-2">
-              <RotatingCTA variant="primary" size="md" />
+              <RotatingCTA variant="primary" size="md" location="footer" />
             </div>
           </div>
 
@@ -92,6 +93,7 @@ export const Footer: React.FC = () => {
                 href={createWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('footer_phone', DISPLAY_PHONE_FULL)}
                 className="flex items-center gap-3 text-base sm:text-lg font-bold text-white hover:text-[#FF2A38] transition-colors group"
               >
                 <div className="w-9 h-9 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center shrink-0 group-hover:border-[#FF2A38]/40 transition-colors">

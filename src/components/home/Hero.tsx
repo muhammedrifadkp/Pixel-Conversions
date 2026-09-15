@@ -86,12 +86,13 @@ export const Hero: React.FC = () => {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <RotatingCTA variant="primary" size="lg" />
+                <RotatingCTA variant="primary" size="lg" location="hero" />
                 <Button
                   href={createWhatsAppLink()}
                   variant="whatsapp"
                   size="lg"
                   external
+                  location="hero"
                   leftIcon={<WhatsAppIcon className="w-5 h-5 text-[#25D366] group-hover:text-white transition-colors duration-500" />}
                 >
                   Chat on WhatsApp

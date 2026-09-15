@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
+import { trackWhatsAppClick } from '@/utils/analytics';
 
 const INDUSTRIES_DATA = [
   {
@@ -98,6 +99,7 @@ export const Industries: React.FC = () => {
                       href={createWhatsAppLink(`Hi Pixel Conversions, I operate in the ${ind.name} sector and would like to discuss a project.`)}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick('industries', ind.name)}
                       className="w-10 h-10 rounded-full bg-neutral-100 group-hover:bg-[#FF2A38] group-hover:text-white text-[#0D0D0E] flex items-center justify-center transition-colors"
                       aria-label={`Inquire about ${ind.name} services`}
                     >

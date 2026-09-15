@@ -7,6 +7,7 @@ import { SERVICES } from '@/data/services';
 import { Button } from '../ui/Button';
 import { ArrowUpRight, Globe, TrendingUp, Palette, Search, CheckCircle2 } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
+import { trackWhatsAppClick } from '@/utils/analytics';
 
 export const CoreServices: React.FC = () => {
   const webDev = SERVICES['website-development'];
@@ -88,6 +89,7 @@ export const CoreServices: React.FC = () => {
                 href={createWhatsAppLink("Hi Pixel Conversions, I'd like to build a custom website.")}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('core_services_web', 'Discuss Web Project')}
                 className="px-5 py-2.5 rounded-full bg-[#FF2A38] hover:bg-[#E50914] text-white text-xs font-bold transition-colors shadow-md shadow-[#FF2A38]/20"
               >
                 Discuss Web Project
@@ -152,6 +154,7 @@ export const CoreServices: React.FC = () => {
                 href={createWhatsAppLink("Hi Pixel Conversions, I'd like to discuss Performance Marketing & Ads.")}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick('core_services_marketing', 'Discuss Ad Campaigns')}
                 className="px-5 py-2.5 rounded-full bg-[#FF2A38] hover:bg-[#E50914] text-white text-xs font-bold transition-colors shadow-md shadow-[#FF2A38]/20"
               >
                 Discuss Ad Campaigns

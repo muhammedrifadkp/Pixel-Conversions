@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import { trackWhatsAppClick } from '@/utils/analytics';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -11,11 +12,12 @@ interface ButtonProps {
   href?: string;
   external?: boolean;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent) => void;
   type?: 'button' | 'submit' | 'reset';
   icon?: boolean;
   leftIcon?: React.ReactNode;
   disabled?: boolean;
+  location?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -30,6 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
   icon = true,
   leftIcon,
   disabled = false,
+  location,
 }) => {
   const baseStyles =
     'inline-flex items-center justify-center font-semibold transition-all duration-300 rounded-full select-none cursor-pointer tracking-tight active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FF2A38]';
@@ -57,6 +60,16 @@ export const Button: React.FC<ButtonProps> = ({
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${
     disabled ? 'opacity-50 pointer-events-none' : ''
   } ${className}`;
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    if (variant === 'whatsapp' || (href && (href.startsWith('https://wa.me') || href.includes('wa.me')))) {
+      const labelText = typeof children === 'string' ? children : 'WhatsApp Button';
+      trackWhatsAppClick(location || 'whatsapp_button', labelText);
+    }
+    if (onClick) {
+      onClick(e);
+    }
+  };
 
   const content = (
     <>
@@ -114,14 +127,14 @@ export const Button: React.FC<ButtonProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           className={`group ${combinedClasses}`}
-          onClick={onClick}
+          onClick={handleClick}
         >
           {content}
         </a>
       );
     }
     return (
-      <Link href={href} className={`group ${combinedClasses}`} onClick={onClick}>
+      <Link href={href} className={`group ${combinedClasses}`} onClick={handleClick}>
         {content}
       </Link>
     );
@@ -131,7 +144,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       type={type}
       className={`group ${combinedClasses}`}
-      onClick={onClick}
+      onClick={handleClick}
       disabled={disabled}
     >
       {content}

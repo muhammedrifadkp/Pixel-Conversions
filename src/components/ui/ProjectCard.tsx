@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Project } from '@/data/projects';
 import { ExternalLink, ArrowUpRight, BookOpen } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
+import { trackWhatsAppClick } from '@/utils/analytics';
 
 interface ProjectCardProps {
   project: Project;
@@ -97,6 +98,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, priority = fa
             href={createWhatsAppLink(`Hi Pixel Conversions, I saw your work on ${project.title} (${project.websiteUrl}) and would like to discuss a similar project.`)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick('project_card', project.title)}
             className="text-xs font-medium text-neutral-500 hover:text-[#0D0D0E] transition-colors"
           >
             Discuss Project

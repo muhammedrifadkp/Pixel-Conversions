@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
 import { formatContactFormWhatsAppMessage, createWhatsAppLink } from '@/utils/whatsapp';
+import { trackWhatsAppClick } from '@/utils/analytics';
 import { MessageSquare, Send, CheckCircle2 } from 'lucide-react';
 
 interface ContactFormProps {
@@ -44,6 +45,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     e.preventDefault();
     if (!validate()) return;
 
+    // Track GA4 event
+    trackWhatsAppClick('contact_form', formData.service || 'General Inquiry');
+
     // Generate formatted WhatsApp message
     const formattedMessage = formatContactFormWhatsAppMessage(formData);
     const whatsappUrl = createWhatsAppLink(formattedMessage);
@@ -81,6 +85,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
               external
               variant="primary"
               size="lg"
+              location="contact_form_fallback"
             >
               Open WhatsApp Now
             </Button>

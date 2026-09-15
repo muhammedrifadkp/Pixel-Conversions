@@ -4,12 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
+import { trackWhatsAppClick } from '@/utils/analytics';
 
 interface RotatingCTAProps {
   variant?: 'primary' | 'dark' | 'white' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   customMessage?: string;
+  location?: string;
 }
 
 const CTA_PHRASES = [
@@ -24,6 +26,7 @@ export const RotatingCTA: React.FC<RotatingCTAProps> = ({
   size = 'md',
   className = '',
   customMessage,
+  location = 'rotating_cta',
 }) => {
   const [index, setIndex] = useState(0);
 
@@ -61,6 +64,7 @@ export const RotatingCTA: React.FC<RotatingCTAProps> = ({
       href={linkUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick(location, CTA_PHRASES[index])}
       className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
       aria-label="Contact Pixel Conversions on WhatsApp"
     >

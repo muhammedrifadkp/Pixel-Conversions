@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { RotatingCTA } from '../ui/RotatingCTA';
 import { MessageSquare, Phone, ArrowUpRight } from 'lucide-react';
 import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
+import { trackWhatsAppClick } from '@/utils/analytics';
 
 export const FinalCTA: React.FC = () => {
   return (
@@ -27,11 +28,12 @@ export const FinalCTA: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <RotatingCTA variant="primary" size="lg" />
+          <RotatingCTA variant="primary" size="lg" location="final_cta" />
           <a
             href={createWhatsAppLink("Hi Pixel Conversions, I'd like to schedule a project consultation.")}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick('final_cta_direct', DISPLAY_PHONE_FULL)}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-neutral-900 text-white font-semibold text-base border border-neutral-700 hover:border-white transition-colors"
           >
             <Phone className="w-4 h-4 text-[#FF2A38]" />
