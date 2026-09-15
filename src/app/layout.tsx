@@ -74,10 +74,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: '/fav-icon.jpeg', type: 'image/jpeg' },
+      { url: '/favicon-48x48.png', type: 'image/png', sizes: '48x48' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
     ],
-    shortcut: '/fav-icon.jpeg',
-    apple: '/fav-icon.jpeg',
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   robots: {
     index: true,
@@ -100,9 +104,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakarta.variable} ${mono.variable} scroll-smooth`}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="shortcut icon" href="/fav-icon.jpeg" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/fav-icon.jpeg" type="image/jpeg" />
         <StructuredData />
       </head>
       <body className="font-sans bg-white text-[#0D0D0E] antialiased selection:bg-[#FF2A38] selection:text-white flex flex-col min-h-screen">
