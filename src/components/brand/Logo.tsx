@@ -24,7 +24,7 @@ export const Logo: React.FC<LogoProps> = ({
         style={{ width: size, height: size }}
       >
         <Image
-          src="/logo.jpeg"
+          src="/logo.webp"
           alt="Pixel Conversions Logo"
           width={size}
           height={size}

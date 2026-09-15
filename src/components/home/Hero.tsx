@@ -11,13 +11,16 @@ import { createWhatsAppLink } from '@/utils/whatsapp';
 
 export const Hero: React.FC = () => {
   const [isVideoReady, setIsVideoReady] = useState(false);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }
+    return false;
+  });
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    // Check if user prefers reduced motion
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
 
     const handleMotionChange = (e: MediaQueryListEvent) => {
       setPrefersReducedMotion(e.matches);
@@ -127,7 +130,7 @@ export const Hero: React.FC = () => {
               <div className="relative w-full aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-200/80 shadow-2xl shadow-black/10">
                 {/* Poster Image */}
                 <Image
-                  src="/all-respo/video-thumb.png"
+                  src="/all-respo/video-thumb.webp"
                   alt="ZTOIQ Responsive Website Showcase"
                   fill
                   priority
@@ -146,13 +149,14 @@ export const Hero: React.FC = () => {
                     loop
                     playsInline
                     preload="metadata"
-                    poster="/all-respo/video-thumb.png"
+                    poster="/all-respo/video-thumb.webp"
                     onCanPlay={() => setIsVideoReady(true)}
                     onLoadedData={() => setIsVideoReady(true)}
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-out z-0 ${
                       isVideoReady ? 'opacity-100' : 'opacity-0'
                     }`}
                   >
+                    <source src="/all-respo/Website_responsive.webm" type="video/webm" />
                     <source src="/all-respo/Website_responsive.mp4" type="video/mp4" />
                   </video>
                 )}

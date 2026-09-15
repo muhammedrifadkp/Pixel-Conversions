@@ -1,9 +1,8 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { RotatingCTA } from '../ui/RotatingCTA';
-import { MessageSquare, Phone, ArrowUpRight } from 'lucide-react';
+import { MessageSquare, Phone } from 'lucide-react';
 import { createWhatsAppLink, DISPLAY_PHONE_FULL } from '@/utils/whatsapp';
 import { trackWhatsAppClick } from '@/utils/analytics';
 

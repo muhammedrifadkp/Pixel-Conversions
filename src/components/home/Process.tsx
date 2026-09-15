@@ -1,7 +1,4 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const STEPS = [
   {
@@ -50,13 +47,9 @@ export const Process: React.FC = () => {
 
         {/* Process Step Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {STEPS.map((step, idx) => (
-            <motion.div
+          {STEPS.map((step) => (
+            <div
               key={step.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.08 }}
               className="bg-neutral-50 rounded-2xl p-6 border border-neutral-200 flex flex-col justify-between hover:border-[#0D0D0E] transition-all duration-300 group"
             >
               <div>
@@ -69,7 +62,7 @@ export const Process: React.FC = () => {
               <div className="w-full h-1 bg-neutral-200 rounded-full mt-6 overflow-hidden">
                 <div className="w-1/3 h-full bg-[#FF2A38] rounded-full group-hover:w-full transition-all duration-500" />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

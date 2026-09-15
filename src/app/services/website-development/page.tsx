@@ -6,7 +6,7 @@ import { PROJECTS } from '@/data/projects';
 import { Accordion } from '@/components/ui/Accordion';
 import { ContactForm } from '@/components/ui/ContactForm';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
-import { CheckCircle2, Zap, ShieldCheck, Globe, Code2, Smartphone, Cpu, ArrowUpRight } from 'lucide-react';
+import { Zap, Code2, Smartphone, Cpu, ArrowUpRight } from 'lucide-react';
 import { GENERAL_FAQS } from '@/data/faq';
 
 export const metadata: Metadata = {

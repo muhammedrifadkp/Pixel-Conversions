@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Accordion } from '../ui/Accordion';
 import { GENERAL_FAQS } from '@/data/faq';

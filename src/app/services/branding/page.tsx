@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { SERVICES } from '@/data/services';
 import { ContactForm } from '@/components/ui/ContactForm';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
-import { Palette, Sparkles, Layers, Type, ShieldCheck } from 'lucide-react';
+import { Palette, Sparkles, Layers, Type } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Brand Identity & Visual Design Agency | Logo & Guidelines',

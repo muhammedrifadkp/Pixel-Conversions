@@ -1,8 +1,5 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { BLOG_POSTS, BlogPost } from '@/data/blog';
 import { Button } from '../ui/Button';
 import { ArrowUpRight, BookOpen, Clock } from 'lucide-react';
@@ -29,13 +26,9 @@ export const LatestBlog: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {latestPosts.map((post: BlogPost, idx: number) => (
-            <motion.div
+          {latestPosts.map((post: BlogPost) => (
+            <div
               key={post.slug}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.08 }}
               className="bg-white rounded-3xl p-8 border border-neutral-200 flex flex-col justify-between hover:border-[#0D0D0E] transition-all duration-300 group shadow-sm hover:shadow-xl hover:shadow-black/[0.03]"
             >
               <div className="space-y-4">
@@ -70,7 +63,7 @@ export const LatestBlog: React.FC = () => {
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

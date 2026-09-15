@@ -4,8 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { SERVICES } from '@/data/services';
-import { Button } from '../ui/Button';
-import { ArrowUpRight, Globe, TrendingUp, Palette, Search, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, Globe, TrendingUp, Palette, Search } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
 import { trackWhatsAppClick } from '@/utils/analytics';
 

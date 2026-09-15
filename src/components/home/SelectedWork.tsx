@@ -1,8 +1,4 @@
-'use client';
-
 import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { PROJECTS } from '@/data/projects';
 import { ProjectCard } from '../ui/ProjectCard';
 import { Button } from '../ui/Button';
@@ -34,15 +30,9 @@ export const SelectedWork: React.FC = () => {
         {/* Real Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {featuredProjects.map((project, idx) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
-            >
+            <div key={project.id}>
               <ProjectCard project={project} priority={idx < 2} />
-            </motion.div>
+            </div>
           ))}
         </div>
 

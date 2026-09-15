@@ -1,11 +1,9 @@
 import React from 'react';
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { SERVICES } from '@/data/services';
 import { Button } from '@/components/ui/Button';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
-import { ArrowUpRight, CheckCircle2, Globe, TrendingUp, Palette, Search } from 'lucide-react';
-import { createWhatsAppLink } from '@/utils/whatsapp';
+import { CheckCircle2 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Capabilities & Core Services | Web Development & Digital Marketing Agency',
@@ -69,7 +67,7 @@ export default function ServicesPage() {
                 <div className="lg:col-span-5 space-y-6">
                   <div className="flex items-center gap-3">
                     <span className="text-xs font-mono uppercase tracking-widest text-[#FF2A38]">
-                      0{idx + 1} // {service.isPrimary ? 'PRIMARY SERVICE' : 'CAPABILITY'}
+                      0{idx + 1} {'//'} {service.isPrimary ? 'PRIMARY SERVICE' : 'CAPABILITY'}
                     </span>
                   </div>
 

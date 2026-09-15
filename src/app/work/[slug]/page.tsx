@@ -4,10 +4,9 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PROJECTS } from '@/data/projects';
-import { Button } from '@/components/ui/Button';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
 import { WhatsAppLink } from '@/components/ui/WhatsAppLink';
-import { ArrowLeft, ExternalLink, ArrowUpRight, CheckCircle2, Code2, Sparkles, Layers } from 'lucide-react';
+import { ArrowLeft, ExternalLink, CheckCircle2 } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
 
 interface PageProps {

@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
 import { trackWhatsAppClick } from '@/utils/analytics';
@@ -46,8 +45,6 @@ const INDUSTRIES_DATA = [
 ];
 
 export const Industries: React.FC = () => {
-  const [activeIdx, setActiveIdx] = useState<number | null>(0);
-
   return (
     <section className="py-24 bg-white text-[#0D0D0E] relative border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,15 +65,10 @@ export const Industries: React.FC = () => {
 
         {/* Editorial Typographic List with Hover Indicators */}
         <div className="divide-y divide-neutral-200 border-y border-neutral-200">
-          {INDUSTRIES_DATA.map((ind, idx) => {
-            const isHovered = activeIdx === idx;
+          {INDUSTRIES_DATA.map((ind) => {
             return (
-              <motion.div
+              <div
                 key={ind.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                onMouseEnter={() => setActiveIdx(idx)}
                 className="py-8 sm:py-10 transition-colors duration-300 group cursor-pointer"
               >
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
@@ -107,7 +99,7 @@ export const Industries: React.FC = () => {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

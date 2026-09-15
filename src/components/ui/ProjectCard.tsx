@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Project } from '@/data/projects';
-import { ExternalLink, ArrowUpRight, BookOpen } from 'lucide-react';
+import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { createWhatsAppLink } from '@/utils/whatsapp';
 import { trackWhatsAppClick } from '@/utils/analytics';
 

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Button } from './Button';
 import { formatContactFormWhatsAppMessage, createWhatsAppLink } from '@/utils/whatsapp';
 import { trackWhatsAppClick } from '@/utils/analytics';
-import { MessageSquare, Send, CheckCircle2 } from 'lucide-react';
+import { MessageSquare, CheckCircle2 } from 'lucide-react';
 
 interface ContactFormProps {
   defaultService?: string;

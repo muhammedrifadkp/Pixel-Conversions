@@ -1,8 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { Button } from '@/components/ui/Button';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
-import { ShieldCheck, Zap, Globe, Sparkles, MapPin, Target, CheckCircle2 } from 'lucide-react';
+import { Sparkles, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Pixel Conversions | Web Development & Digital Marketing Agency',

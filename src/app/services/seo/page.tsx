@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { SERVICES } from '@/data/services';
 import { ContactForm } from '@/components/ui/ContactForm';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
-import { Search, MapPin, Code2, FileText, CheckCircle2 } from 'lucide-react';
+import { Search, MapPin, Code2, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'SEO Agency & Local Search Optimization | Kozhikode & Bengaluru',

@@ -2,9 +2,9 @@ import React from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { BLOG_POSTS, BlogPost } from '@/data/blog';
+import { BLOG_POSTS } from '@/data/blog';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
-import { ArrowLeft, Clock, Calendar, User, Share2 } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
 
 interface PageProps {
   params: Promise<{ slug: string }>;

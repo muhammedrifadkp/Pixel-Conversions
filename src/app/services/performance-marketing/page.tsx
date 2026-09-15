@@ -4,7 +4,7 @@ import { SERVICES } from '@/data/services';
 import { Accordion } from '@/components/ui/Accordion';
 import { ContactForm } from '@/components/ui/ContactForm';
 import { RotatingCTA } from '@/components/ui/RotatingCTA';
-import { TrendingUp, Target, BarChart3, Users, DollarSign } from 'lucide-react';
+import { TrendingUp, Target, BarChart3, Users } from 'lucide-react';
 import { GENERAL_FAQS } from '@/data/faq';
 
 export const metadata: Metadata = {
